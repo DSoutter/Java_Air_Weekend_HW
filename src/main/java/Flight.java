@@ -60,4 +60,8 @@ public class Flight {
     public void addPassenger(Passenger passenger){
         passengers.add(passenger);
     }
+
+    public int availableSeats(){
+        return this.planeType.getCapcity() - this.passengers.size();
+    }
 }
