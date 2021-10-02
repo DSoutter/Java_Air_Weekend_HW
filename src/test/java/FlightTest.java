@@ -115,4 +115,18 @@ public class FlightTest {
         flight.addPassenger(passenger1);
         assertEquals(40, flightManager.weightOfBaggage(flight));
     }
+
+    @Test
+    public void flightManagerKnowsWeight2(){
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger2);
+        assertEquals(120, flightManager.weightOfBaggage(flight));
+    }
+
+    @Test
+    public void flightManagerKnowsWhatsLeft(){
+        flight.addPassenger(passenger1);
+        assertEquals(110, flightManager.remainingAllowance(flight));
+    }
 }

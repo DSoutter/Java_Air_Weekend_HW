@@ -33,5 +33,9 @@ public class FlightManager {
         }
         return totalBaggage * 20;
     }
+
+    public int remainingAllowance(Flight flight){
+        return (int) flight.getPlaneType().getTotalWeight()/2-weightOfBaggage(flight);
+    }
 }
 
