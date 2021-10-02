@@ -93,7 +93,7 @@ public class FlightTest {
 
     @Test
     public void planeHas1seatLeft(){
-        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger1);
         assertEquals(1, flight.availableSeats());
     }
 
@@ -119,9 +119,8 @@ public class FlightTest {
     @Test
     public void flightManagerKnowsWeight2(){
         flight.addPassenger(passenger1);
-        flight.addPassenger(passenger2);
-        flight.addPassenger(passenger2);
-        assertEquals(120, flightManager.weightOfBaggage(flight));
+        flight.addPassenger(passenger1);
+        assertEquals(80, flightManager.weightOfBaggage(flight));
     }
 
     @Test

@@ -57,8 +57,14 @@ public class Flight {
         return departureTime;
     }
 
+    public int totalBaggageAllowed(){
+        double weightForLuggage = getPlaneType().getTotalWeight()/2;
+        int capacity = getPlaneType().getCapcity();
+        return (int) ((weightForLuggage/capacity)/20);
+    }
+
     public void addPassenger(Passenger passenger){
-        if (availableSeats()> 0){
+        if (availableSeats()> 0 && totalBaggageAllowed()>=passenger.getNumberOfBags()){
             passengers.add(passenger);
         }
     }
