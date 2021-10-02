@@ -15,4 +15,8 @@ public class Pilot extends Employee {
     public String getLicenseNum() {
         return this.licenseNum;
     }
+
+    public String flyPlane(){
+        return "Liftoff!";
+    }
 }
