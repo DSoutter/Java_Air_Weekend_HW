@@ -19,4 +19,5 @@ public enum PlaneType {
     public double getTotalWeight() {
         return this.totalWeight;
     }
+    
 }

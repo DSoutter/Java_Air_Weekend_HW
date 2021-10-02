@@ -20,6 +20,7 @@ public class FlightTest {
     private ArrayList<CabinCrewMember> cabinCrewMemberArrayList;
     private CabinCrewMember cabinCrewMember1;
     private CabinCrewMember cabinCrewMember2;
+    private FlightManager flightManager;
 
     @Before
     public void before(){
@@ -36,6 +37,7 @@ public class FlightTest {
         cabinCrewMemberArrayList.add(cabinCrewMember1);
         cabinCrewMemberArrayList.add(cabinCrewMember2);
         flight = new Flight(pilotArrayList, cabinCrewMemberArrayList, PlaneType.SESSNA, "BA256", "CDG", "GLA", "13:00");
+        flightManager = new FlightManager("Jerry", flight);
     }
 
     @Test
@@ -101,5 +103,10 @@ public class FlightTest {
         flight.addPassenger(passenger2);
         flight.addPassenger(passenger1);
         assertEquals(2, flight.getPassengers().size());
+    }
+
+    @Test
+    public void flightManagerKnowsBaggage(){
+        assertEquals(3, flightManager.baggagePerPerson(flight));
     }
 }
