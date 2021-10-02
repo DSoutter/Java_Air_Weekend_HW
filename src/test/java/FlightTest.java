@@ -59,5 +59,28 @@ public class FlightTest {
         assertEquals(1, flight.getPassengers().size());
     }
 
-    
+    @Test
+    public void flightHasPlane(){
+        assertEquals(PlaneType.SESSNA, flight.getPlaneType());
+    }
+
+    @Test
+    public void flightHasNumber(){
+        assertEquals("BA256", flight.getFlightNo());
+    }
+
+    @Test
+    public void flightHasDest(){
+        assertEquals("CDG", flight.getDestination());
+    }
+
+    @Test
+    public void flightHasDept(){
+        assertEquals("GLA", flight.getDeparture());
+    }
+
+    @Test
+    public void flightHasDeptTime(){
+        assertEquals("13:00", flight.getDepartureTime());
+    }
 }
