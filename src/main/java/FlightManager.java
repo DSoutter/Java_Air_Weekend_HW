@@ -26,5 +26,12 @@ public class FlightManager {
             return numberOfLuggage;
         }
 
+    public int weightOfBaggage(Flight flight){
+        int totalBaggage = 0;
+        for (int i = 0; i < flight.getPassengers().size(); i++){
+            totalBaggage+=flight.getPassengers().get(i).getNumberOfBags();
+        }
+        return totalBaggage * 20;
+    }
 }
 
