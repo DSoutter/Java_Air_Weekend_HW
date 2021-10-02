@@ -58,7 +58,9 @@ public class Flight {
     }
 
     public void addPassenger(Passenger passenger){
-        passengers.add(passenger);
+        if (availableSeats()> 0){
+            passengers.add(passenger);
+        }
     }
 
     public int availableSeats(){

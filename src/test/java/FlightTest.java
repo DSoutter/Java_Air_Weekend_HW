@@ -88,4 +88,18 @@ public class FlightTest {
     public void planeHasAllRemainingSeats(){
         assertEquals(2, flight.availableSeats());
     }
+
+    @Test
+    public void planeHas1seatLeft(){
+        flight.addPassenger(passenger2);
+        assertEquals(1, flight.availableSeats());
+    }
+
+    @Test
+    public void planeWontTakeMoreThan2(){
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger1);
+        assertEquals(2, flight.getPassengers().size());
+    }
 }
